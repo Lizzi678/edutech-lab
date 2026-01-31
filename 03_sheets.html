@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>База знаний | EduTech.Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 2000px; /* Достаточно для всего текста */
+            padding-bottom: 2rem;
+        }
+        .accordion-item.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-white overflow-x-hidden">
+    <nav class="fixed w-full bg-[#0f172a]/80 backdrop-blur-xl z-50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="01_index.html" class="font-black text-2xl tracking-tighter text-[#38bdf8]">EduTech.Lab</a>
+            <div class="space-x-5 hidden lg:flex text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                <a href="02_benefits.html" class="hover:text-white transition">Преимущества</a>
+                <a href="03_sheets.html" class="text-white">Лайфхаки</a>
+                <a href="04_review.html" class="hover:text-white transition">Quizizz</a>
+                <a href="05_skype.html" class="hover:text-white transition">Skype</a>
+                <a href="06_miro.html" class="text-[#38bdf8] font-black">Miro (Choice)</a>
+                <a href="07_testpad.html" class="hover:text-white transition">TestPad</a>
+                <a href="08_sdamgia.html" class="hover:text-white transition">СдамГИА</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+        <nav class="flex text-[10px] font-bold uppercase tracking-widest text-slate-500 gap-2 mb-12">
+            <a href="01_index.html" class="hover:text-[#38bdf8]">Главная</a> <span>/</span> <span class="text-[#38bdf8]">Лайфхаки</span>
+        </nav>
+
+        <header class="text-center mb-16" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase italic">Smart Hacks</h1>
+            <p class="text-slate-500 uppercase tracking-[0.3em] text-xs">Как приручить цифровую среду</p>
+        </header>
+
+        <div class="space-y-6">
+            <div class="accordion-item glass-card rounded-[2.5rem] px-8 transition-all duration-500" data-aos="fade-up">
+                <button onclick="toggleAccordion(this)" class="w-full py-8 flex justify-between items-center text-left focus:outline-none">
+                    <div class="flex items-center gap-6">
+                        <span class="text-4xl">👨‍🏫</span>
+                        <div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight">Для преподавателей</h3>
+                            <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Методики и ресурсы</p>
+                        </div>
+                    </div>
+                    <span class="arrow-icon transition-transform duration-300 text-[#38bdf8]">▼</span>
+                </button>
+                <div class="accordion-content text-slate-400 leading-relaxed space-y-6">
+                    <div class="bg-white/5 p-6 rounded-3xl border border-white/5">
+                        <h4 class="text-white font-bold mb-2 underline decoration-[#38bdf8]">Структура контента</h4>
+                        <p class="text-sm">Используйте схему: <b>Год → Курс → Тема</b>. Файлы именуйте по стандарту: <code class="bg-black/30 px-2 py-1 rounded text-[#38bdf8]">ГГГГ.ММ.ДД_Название</code>.</p>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-3xl border border-white/5">
+                        <h4 class="text-white font-bold mb-2 underline decoration-[#38bdf8]">Максимум от платформ</h4>
+                        <p class="text-sm">Внедряйте интерактив Moodle/Stepik и автопроверку. Это экономит до 40% вашего времени на проверке тестов.</p>
+                    </div>
+                    <div class="bg-[#38bdf8]/10 p-6 rounded-3xl border border-[#38bdf8]/20">
+                        <p class="text-sm text-slate-300"><b>Правило 3-2-1:</b> 3 копии данных, 2 разных носителя, 1 копия удаленно (облако).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item glass-card rounded-[2.5rem] px-8 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                <button onclick="toggleAccordion(this)" class="w-full py-8 flex justify-between items-center text-left focus:outline-none">
+                    <div class="flex items-center gap-6">
+                        <span class="text-4xl">⚙️</span>
+                        <div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight">IT-Администраторам</h3>
+                            <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Инфраструктура и безопасность</p>
+                        </div>
+                    </div>
+                    <span class="arrow-icon transition-transform duration-300 text-purple-500">▼</span>
+                </button>
+                <div class="accordion-content text-slate-400 space-y-6">
+                    <p class="text-sm">Обеспечение надежной и масштабируемой базы учебного заведения.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                            <h5 class="text-white font-bold text-xs mb-2 uppercase tracking-widest">Автоматизация</h5>
+                            <p class="text-xs italic">Используйте Ansible для деплоя и Zabbix для мониторинга 24/7.</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                            <h5 class="text-white font-bold text-xs mb-2 uppercase tracking-widest">SSH Safe</h5>
+                            <p class="text-xs italic">Отключите root, вход только по ключам, порт 22 под замену.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-purple-500/10 rounded-3xl border border-purple-500/20">
+                        <p class="text-sm"><b>Свой сервер vs Облако:</b> On-premise для 152-ФЗ и стабильной нагрузки. Облако (Yandex Cloud) для пиков и масштабирования за 5 минут.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item glass-card rounded-[2.5rem] px-8 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                <button onclick="toggleAccordion(this)" class="w-full py-8 flex justify-between items-center text-left focus:outline-none">
+                    <div class="flex items-center gap-6">
+                        <span class="text-4xl">🎓</span>
+                        <div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight">Для студентов</h3>
+                            <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Организация и учеба</p>
+                        </div>
+                    </div>
+                    <span class="arrow-icon transition-transform duration-300 text-emerald-400">▼</span>
+                </button>
+                <div class="accordion-content text-slate-400 space-y-6">
+                    <ul class="list-disc list-inside space-y-3 text-sm">
+                        <li><b>Командная работа:</b> Notion для баз знаний, Google Docs для текстов, GitHub для кода.</li>
+                        <li><b>Digital-конспекты:</b> Markdown (Obsidian) — лучший способ структурировать знания.</li>
+                        <li><b>Защита:</b> Никогда не передавайте пароли от LMS. Имейте локальный бэкап диплома/курсовой.</li>
+                    </ul>
+                    <div class="bg-emerald-500/10 p-6 rounded-3xl border border-emerald-500/20">
+                        <p class="text-sm text-emerald-100 italic">"Пользуйтесь ресурсами вуза: подписки на Office 365, MATLAB и Scopus часто бесплатны для вас!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 p-10 bg-gradient-to-r from-[#38bdf8]/10 to-transparent rounded-[3rem] border border-white/5 text-center" data-aos="zoom-in">
+            <h4 class="text-white font-black uppercase mb-4 tracking-widest">Ключевой принцип</h4>
+            <p class="text-slate-400 text-lg"><b>Документируйте процессы!</b> Это превращает цифровой хаос в управляемый и безопасный инструмент успеха.</p>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+            
+            // Закрыть остальные (опционально)
+            const allItems = document.querySelectorAll('.accordion-item');
+            allItems.forEach(i => {
+                if (i !== item) i.classList.remove('active');
+            });
+        }
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
